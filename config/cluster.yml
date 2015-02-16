@@ -1,0 +1,23 @@
+version:
+  coreos_update_channel: beta
+  coreos_box_version: '>= 522.5.0'
+
+cluster:
+  num_nodes: 3
+  memory: 1024
+  cpus: 1
+  private_subnet: 10.100.100.%d
+  start_ip: 100
+  host_name_pattern: box-%d
+  username: core
+  user_data_filename: user-data
+
+discovery:
+  token_filename: .discovery_token
+
+#ssh_keys: <%="#{ENV['HOME']}/.ssh/id_rsa"%>
+
+#nfs:
+#  - id: share
+#    mapping: ..:/home/core/share
+#    options: nolock,vers=3,udp
