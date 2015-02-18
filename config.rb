@@ -5,7 +5,7 @@ module CoreosVagrant
   module Config
     def self.load(*files)
       files.each do |f|
-        config.merge! YAML.load(ERB.new(File.read(f)).result)
+        config.merge! YAML.load(ERB.new(File.read(f)).result) if File.exist? f
       end
     end
 
